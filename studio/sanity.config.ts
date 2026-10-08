@@ -27,6 +27,9 @@ import {
 
 // Environment variables for project configuration
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
+if (!projectId) {
+  throw new Error('SANITY_STUDIO_PROJECT_ID is not defined')
+}
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 // URL for preview functionality, defaults to localhost:3000 if not set
